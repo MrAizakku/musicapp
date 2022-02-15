@@ -6,42 +6,42 @@
                 <div class="mb-3 row">
                     <label for="id" class="col-sm-2 col-form-label">Id: </label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control" formControlName="id" [(ngModel)]="album[0].Id" placeholder="Id" readonly>
+                      <input type="number" class="form-control" formControlName="id" [(ngModel)]="album.Id" placeholder="Id" readonly>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="title" class="col-sm-2 col-form-label">Title: </label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" formControlName="title" [(ngModel)]="album[0].Title" placeholder="Album Title" required>
+                      <input type="text" class="form-control" formControlName="title" [(ngModel)]="album.Title" placeholder="Album Title" required>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="artist" class="col-sm-2 col-form-label">Artist: </label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" formControlName="artist" [(ngModel)]="album[0].Artist" placeholder="Album Artist" required>
+                      <input type="text" class="form-control" formControlName="artist" [(ngModel)]="album.Artist" placeholder="Album Artist" required>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="description" class="col-sm-2 col-form-label">Desc: </label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" formControlName="description" [(ngModel)]="album[0].Description" placeholder="Album Description" required>
+                      <input type="text" class="form-control" formControlName="description" [(ngModel)]="album.Description" placeholder="Album Description" required>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="year" class="col-sm-2 col-form-label">Year: </label>
                     <div class="col-sm-10">
-                      <input type="number" class="form-control" formControlName="year" [(ngModel)]="album[0].Year" placeholder="Release Year" required>
+                      <input type="number" class="form-control" formControlName="year" [(ngModel)]="album.Year" placeholder="Release Year" required>
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="image" class="col-sm-2 col-form-label">Image: </label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" formControlName="image" [(ngModel)]="album[0].Image" placeholder="Image File Name" required>
+                      <input type="text" class="form-control" formControlName="image" [(ngModel)]="album.Image" placeholder="Image File Name" required>
                     </div>
                 </div>
                 <br />
                 <label>Tracks:</label>
-                <div class="form-group" *ngFor="let track of album[0].Tracks">
+                <div class="form-group" *ngFor="let track of album.Tracks">
                     <label> - {{track.Title}}</label>
                 </div><br/>
             </div>

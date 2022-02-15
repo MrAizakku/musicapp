@@ -14,7 +14,9 @@ export class DeleteAlbumComponent implements OnInit {
   ngOnInit(): void {
     if(confirm('Are you sure you want to delete?')) {
       this.Router.params.subscribe(params => {
-        this.service.deleteAlbum(params['id']);
+        this.service.deleteAlbum(params['id'], () => {
+          this.service.getAlbum;
+        })
       });
     }
       this.redirect.navigate(['list-artists']);

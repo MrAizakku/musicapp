@@ -30,7 +30,7 @@ export class CreateAlbumComponent implements OnInit {
   image:string = "";
 
   onSubmit(data:any) {
-    this.service.createAlbum(new Album(this.service.getId(), data.title, data.artist, data.description, data.year, data.image, []));
+    this.service.createAlbum(new Album(-1, data.title, data.artist, data.description, data.year, data.image, []), () => this.service.createAlbum);
     this.redirect.navigate(['list-artists']);
   }
 

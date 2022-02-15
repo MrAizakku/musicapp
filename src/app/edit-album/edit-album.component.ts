@@ -28,8 +28,10 @@ export class EditAlbumComponent implements OnInit {
   album:any;
 
   onSubmit(data:any) {
-    let editAlbum:Album = new Album(data.id, data.title, data.artist, data.description,  data.year,  data.image, this.album[0].Tracks);
-    this.service.updateAlbum(editAlbum);
+    let editAlbum:Album = new Album(data.id, data.title, data.artist, data.description,  data.year,  data.image, this.album.Tracks);
+    this.service.updateAlbum(this.album, () => {
+      this.service.getAlbum;
+    });
     this.redirect.navigate(['list-artists']);
   }
 
@@ -37,7 +39,11 @@ export class EditAlbumComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.album = this.service.getAlbum(params['artist'], params['id']);
+      this.album = this.service.getAlbum(params['artist'], params['id'], (album: Album) => {
+        console.log(album);
+        
+        this.album = album;
+      });
     })
   }
 

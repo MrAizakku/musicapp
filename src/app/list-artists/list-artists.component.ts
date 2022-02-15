@@ -10,15 +10,17 @@ import { Artist } from '../models/Artist';
 })
 export class ListArtistsComponent implements OnInit {
   selectedArtist:any;
-  artists:Artist[] = [];
+  artists:any;
 
   constructor(private route: ActivatedRoute, private service: MusicServiceService) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      console.log("gathering data...");
-      this.artists = this.service.getArtists();
-      this.selectedArtist = null;
+      this.service.getArtists( (artists:Artist[]) =>
+      {
+        this.artists = artists;
+        this.selectedArtist = null;
+      });
     })
   }
 
